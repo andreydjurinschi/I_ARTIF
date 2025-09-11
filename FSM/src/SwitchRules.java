@@ -3,9 +3,13 @@ import java.util.logging.Logger;
 public class SwitchRules {
 
     FSM FiniteStateMachine = new FSM();
-    Logger logger =  Logger.getLogger(FSM.class.getName());
+     Logger logger =  Logger.getLogger(FSM.class.getName());
 
-    private boolean switchRuleForState0(char ch){
+    public SwitchRules(FSM finiteStateMachine) {
+        FiniteStateMachine = finiteStateMachine;
+    }
+
+    public  boolean switchRuleForState0(char ch){
 
         State currentState = FiniteStateMachine.getState();
         if(currentState != State.state0){
@@ -24,7 +28,7 @@ public class SwitchRules {
         return false;
     }
 
-    private boolean switchRuleForStateA(char ch){
+    public  boolean switchRuleForStateA(char ch){
         State currentState = FiniteStateMachine.getState();
         if(currentState != State.stateA){
             logger.warning("Current state is not state A");
@@ -38,7 +42,7 @@ public class SwitchRules {
         return false;
     }
 
-    private boolean switchRuleForStateB(char ch){
+    public  boolean switchRuleForStateB(char ch){
         State currentState = FiniteStateMachine.getState();
         if(currentState != State.stateB){
             logger.warning("Current state is not state B");
@@ -52,7 +56,7 @@ public class SwitchRules {
         return false;
     }
 
-    private boolean switchRuleForStateD(char ch){
+    public  boolean switchRuleForStateD(char ch){
         State currentState = FiniteStateMachine.getState();
         if(currentState != State.stateD){
             logger.warning("Current state is not state D");
@@ -65,6 +69,20 @@ public class SwitchRules {
         }else if(ch == '\0'){
             FiniteStateMachine.setState(State.stateFinal);
             logger.info("Switching from stateD to stateFinal (accept)");
+            return true;
+        }
+        return false;
+    }
+
+    public  boolean switchRuleFOrStateE(char ch){
+        State currentState = FiniteStateMachine.getState();
+        if(currentState != State.stateE){
+            logger.warning("Current state is not state E");
+            return false;
+        }
+        if(ch == 'f'){
+            FiniteStateMachine.setState(State.stateD);
+            logger.info("Switching from stateE to stateD");
             return true;
         }
         return false;
