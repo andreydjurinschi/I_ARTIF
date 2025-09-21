@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FSM/FSM.iml" filepath="$PROJECT_DIR$/FSM/FSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MINI_MAX/MINI_MAX.iml" filepath="$PROJECT_DIR$/MINI_MAX/MINI_MAX.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java_proj.iml" filepath="$PROJECT_DIR$/.idea/java_proj.iml" />
     </modules>
   </component>
