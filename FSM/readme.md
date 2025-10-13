@@ -1,5 +1,55 @@
+#### Лабораторная работа №1, Джуринский Андрей
 
-import java.util.logging.Level;
+#### Цель
+
+> Написать программу реализующую ĸонечный автомат, ĸоторый распознает слова, имеющие следующий общий вид:
+
+![img.png](img.png)
+
+> enum класс с всеми возможными состояниями
+
+```java
+/**
+ * state0 - не прочитано
+ * stateA - прочитан а в (abc) ожидаем b
+ * stateB - прочитан b в (abc) ожидаем c
+ * stateD - обязательный d прочитан
+ * stateE - прочитан e в (ef) ожидаем f
+ * stateFinal - конец
+ */
+
+public enum State {
+    state0, stateA, stateB, stateD, stateE, stateFinal
+}
+```
+
+> класс самой машины
+
+```java
+public class FSM {
+    private State state;
+
+    public FSM() {
+    }
+
+    public FSM(State state) {
+        this.state = state;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+}
+```
+
+> класс для правил между переключением состояний
+
+```java
+
 import java.util.logging.Logger;
 public class SwitchRules {
 
@@ -89,3 +139,4 @@ public class SwitchRules {
         return false;
     }
 }
+```

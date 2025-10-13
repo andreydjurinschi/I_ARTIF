@@ -15,8 +15,6 @@ public class FSM_SERVICE {
     SwitchRules rules;
     Logger logger =  Logger.getLogger(FSM.class.getName());
 
-
-
     public FSM_SERVICE() {}
 
     public FSM_SERVICE(FSM FiniteStateMachine) {

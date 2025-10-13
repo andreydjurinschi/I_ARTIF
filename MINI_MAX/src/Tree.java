@@ -24,7 +24,6 @@ public class Tree {
     }
 
     public void setPartialEqualLeaves(int percentage){
-        if(percentage <= 0) return;
         int totalLeaves = values.length - leafStartIdx;
         int count = totalLeaves * percentage / 100;
         Random rnd = new Random();
